@@ -1,0 +1,12 @@
+{{! edit the user details page}}
+<h2>Edit the User details</h2>
+
+{{! inputs with the current values}}
+{{input type="text" value=model.fname placeholder="First name" autofocus="autofocus"}}<br/>
+{{input type="text" value=model.lname placeholder="Last name"}}<br/>
+{{input type="text" value=model.email placeholder="Email"}}<br/>
+{{input type="text" value=model.phone placeholder="Phone number"}}<br/>
+{{input type="text" value=model.address placeholder="Address"}}<br/>
+
+{{! button that call function and pass the whole model to it}}
+<button type="submit" {{action 'updateDetails' model}}>Save changes</button>

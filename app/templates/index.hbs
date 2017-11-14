@@ -1,0 +1,19 @@
+{{!main content of home page - register a new user to the system}}
+<h1>Home Page</h1>
+
+<h2>Add a new User</h2>
+
+{{!inputs}}
+{{input type="text" value=fname placeholder="First name" autofocus="autofocus"}}<br/>
+{{input type="text" value=lname placeholder="Last name"}}<br/>
+{{input type="text" value=email placeholder="Email"}}<br/>
+{{input type="text" value=phone placeholder="Phone number"}}<br/>
+{{input type="text" value=address placeholder="Address"}}<br/>
+
+{{!button that call function to save the data}}
+<button {{action 'saveUser'}} >Save user</button><br/><br/>
+
+{{!Message that appears when the data is saved}}
+{{#if responseMessage}}
+  <span>{{responseMessage}}</span>
+{{/if}}
