@@ -1,0 +1,11 @@
+<b>First Name: </b>{{model.fname }}<br/>
+<b>Last Name: </b>{{model.lname }}<br/>
+<b>Email Address: </b>{{model.email }}<br/>
+<b>Phone No.: </b>{{model.phone }}<br/>
+<b>Address: </b>{{model.address }}<br/>
+{{#link-to 'allUsers'}}<a href="">go back</a>{{/link-to}}<br />
+{{! button call action and pass a reference to the function }}
+<button {{action 'deleteUser' users}}>Delete</button>
+
+{{! link to page to edit user entry passing an ID reference to it}}
+{{#link-to 'edit' model.id}}<a href="">Edit</a>{{/link-to}}<br/>

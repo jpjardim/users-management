@@ -1,16 +1,11 @@
+
 {{! list of all users available}}
 <h2>List of users</h2>
 
 {{!iterate through list of users created}}
 {{#each model as |users|}}
-  <h3>Name: {{users.fname}} {{users.lname}}</h3>
-  <p><b>Email address:</b> {{users.email}}</p>
-  <p><b>Phone:</b> {{users.phone}}</p>
-  <p><b>Address:</b> {{users.address}}</p>
+  {{#link-to 'profile' users.id}}
+  <a href=""> {{users.fname}} {{users.lname}}</a>
+  {{/link-to}}<br/>
 
-  {{! button call action and pass a reference to the function }}
-  <button {{action 'deleteUser' users}}>Delete</button>
-
-  {{! link to page to edit user entry passing an ID reference to it}}
-  {{#link-to 'edit' users.id}}<a href="">Edit</a>{{/link-to}}
 {{/each}}

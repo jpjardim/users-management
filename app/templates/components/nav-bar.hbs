@@ -1,7 +1,13 @@
 {{!navigation bar componenet}}
-<nav>
-  <ul>
-    {{#link-to 'index' tagName="li"}}<a href="">Home</a>{{/link-to}}
-    {{#link-to 'allUsers' tagName="li"}}<a href="">All Users</a>{{/link-to}}
-  </ul>
-</nav>
+{{#bs-navbar class="navbar-inverse"type=(if inverse 'inverse') fluid=fluid collapsed=collapsed onCollapse=(action (mut collapsed) true) onExpand=(action (mut collapsed) false) as |navbar|}}
+  <div class="navbar-header">
+    {{navbar.toggle}}
+    {{#link-to "index" class="navbar-brand"}}Brand{{/link-to}}
+  </div>
+  {{#navbar.content}}
+    {{#navbar.nav as |nav|}}
+      {{#nav.item}}{{#nav.link-to "index"}}Home{{/nav.link-to}}{{/nav.item}}
+      {{#nav.item}}{{#nav.link-to "allUsers"}}All Users{{/nav.link-to}}{{/nav.item}}
+    {{/navbar.nav}}
+  {{/navbar.content}}
+{{/bs-navbar}}

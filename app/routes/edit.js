@@ -11,7 +11,7 @@ export default Ember.Route.extend({
     //function to update the user details with reference to the user
     updateDetails(users) {
       //save and return to preivous page - promise
-      users.save().then(() => this.transitionTo('allUsers'));
+      users.save().then(() => this.transitionTo(history.back()));
     },
 
     willTransition(transition) {
