@@ -1,0 +1,55 @@
+{{!main content of home page - register a new user to the system}}
+<div class="jumbotron ">
+  <h2>Add a new User</h2>
+
+  {{!inputs}}
+  <form>
+    <div class="form-group row">
+      <div class="col-md-3" style="padding-right: 0;">
+        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
+          {{input type="text" class="form-control" value=fname placeholder="First name" autofocus="autofocus"}}
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        {{input type="text" class="form-control" value=lname placeholder="Last name"}}
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-md-6">
+        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></div>
+          {{input type="email" class="form-control" value=email placeholder="Email"}}
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-md-6">
+        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></div>
+          {{input type="number"  class="form-control" value=phone placeholder="Phone number"}}
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-md-6">
+        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></div>
+          {{input type="text" class="form-control" value=address placeholder="Address"}}
+        </div>
+      </div>
+    </div>
+
+  {{!button that call function to save the data}}
+  <button class="btn btn-primary btn-primary" {{action 'saveUser'}} >Save User <span class="glyphicon glyphicon-ok"></span></button>
+
+  {{!Message that appears when the data is saved}}
+  {{#if responseMessage}}
+    <span>{{responseMessage}}</span>
+  {{/if}}
+</form>
+</div>

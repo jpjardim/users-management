@@ -1,19 +1,11 @@
-{{!main content of home page - register a new user to the system}}
-<h1>Home Page</h1>
+<div class="jumbotron text-center">
+  <h1>User management App</h1>
 
-<h2>Add a new User</h2>
+  <br/><br/>
 
-{{!inputs}}
-{{input type="text" value=fname placeholder="First name" autofocus="autofocus"}}<br/>
-{{input type="text" value=lname placeholder="Last name"}}<br/>
-{{input type="text" value=email placeholder="Email"}}<br/>
-{{input type="text" value=phone placeholder="Phone number"}}<br/>
-{{input type="text" value=address placeholder="Address"}}<br/>
-
-{{!button that call function to save the data}}
-<button {{action 'saveUser'}} >Save user</button><br/><br/>
-
-{{!Message that appears when the data is saved}}
-{{#if responseMessage}}
-  <span>{{responseMessage}}</span>
-{{/if}}
+  <p>This is my first EmberJS application, it is simple and made as part of my studies of Web Development</p>
+  <p>There is absolutely nothing fancy about it! You can add, delete and edit users details</p>
+  <p>This details are saved on a Firebase database</p><br/>
+  {{#link-to 'allUsers'}}<a class="btn btn-success btn-lg" href="">See all users</a>{{/link-to}}
+  <br/><br/>
+</div>
