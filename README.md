@@ -1,7 +1,7 @@
 # Users Management App
 
 This is my first application using EmberJS. It is a very simple add / edit / delete users from a firebase database.
-Live App: (https://crm-project-706cf.firebaseapp.com/)
+* [Live App] https://crm-project-706cf.firebaseapp.com/
 
 ## Prerequisites
 
