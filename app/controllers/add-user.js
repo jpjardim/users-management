@@ -4,6 +4,21 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   //message
   responseMessage: '',
+  fname: '',
+  lname: '',
+  phone: '',
+  address: '',
+
+  fnameProof: Ember.computed.gte('fname.length', 3),
+  lnameProof: Ember.computed.gte('lname.length', 3),
+  addressProof: Ember.computed.gte('address.length', 5),
+  emailProof: Ember.computed.match('email', /^.+@.+\..+$/),
+
+  isValid1: Ember.computed.and('fnameProof', 'lnameProof'),
+  isValid2:  Ember.computed.and('emailProof', 'addressProof'),
+  isValid:  Ember.computed.and('isValid1', 'isValid2'),
+
+  isDisabled: Ember.computed.not('isValid'),
 
   actions: {
     //function to save the data

@@ -1,12 +1,17 @@
 <div class="jumbotron ">
   {{! list of all users available}}
   <h2>List of users</h2>
-
-  {{!iterate through list of users created}}
-  {{#each model as |users|}}
-    {{#link-to 'profile' users.id}}
-    <a href=""> {{users.fname}} {{users.lname}}</a>
-    {{/link-to}}<br/>
-
-  {{/each}}
+  <p>Click on the names to see the user details</p>
+  <table class="table table-striped">
+    <tbody>
+      {{!iterate through list of users created}}
+      {{#each model as |users|}}
+        <tr>
+            {{#link-to 'profile' users.id}}
+              <a href="" class="btn"> {{users.fname}} {{users.lname}}</a>
+            {{/link-to}}
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
 </div>

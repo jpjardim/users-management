@@ -3,6 +3,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
+
     //delete the user function with parameter users
      deleteUser() {
        //confirmation
@@ -10,7 +11,7 @@ export default Ember.Controller.extend({
 
        if (confirmation) {
          //delete record
-          this.get('model').destroyRecord().then(() => this.transitionTo(history.back()));;
+          this.get('model').destroyRecord().then(() => this.transitionTo(history.back()));
        }
      }
   }

@@ -1,11 +1,23 @@
-<b>First Name: </b>{{model.fname }}<br/>
-<b>Last Name: </b>{{model.lname }}<br/>
-<b>Email Address: </b>{{model.email }}<br/>
-<b>Phone No.: </b>{{model.phone }}<br/>
-<b>Address: </b>{{model.address }}<br/>
-{{#link-to 'allUsers'}}<a href="">go back</a>{{/link-to}}<br />
-{{! button call action and pass a reference to the function }}
-<button {{action 'deleteUser' users}}>Delete</button>
-
-{{! link to page to edit user entry passing an ID reference to it}}
-{{#link-to 'edit' model.id}}<a href="">Edit</a>{{/link-to}}<br/>
+<div class="jumbotron">
+  <h2>{{model.fname}} {{model.lname}}</h2>
+  <hr>
+  <b>Email Address: </b>{{model.email }}<br/>
+  <b>Phone No.: </b>{{model.phone }}<br/>
+  <b>Address: </b>{{model.address }}<br/>
+  <hr>
+  <div class="form-group row">
+    <div class="form-group col-md-1">
+      {{! link to go back to all users}}
+      {{#link-to 'allUsers'}}<a class='btn btn-warning' href="">Back</a>{{/link-to}}
+    </div>
+    <div class="form-group col-md-1">
+      {{! link to page to edit user entry passing an ID reference to it}}
+      {{#link-to 'edit' model.id}}<a class='btn btn-success ' href="">Edit</a>{{/link-to}}
+    </div>
+    <div class="form-group col-md-9"></div>
+    <div class="form-group col-md-1">
+      {{! button call action and pass a reference to the function }}
+      <button  class="btn btn-danger btn-xs" {{action 'deleteUser' users}} >Delete</button>
+    </div>
+  </div>
+</div>

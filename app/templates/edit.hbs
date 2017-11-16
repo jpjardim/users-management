@@ -1,12 +1,53 @@
+
 {{! edit the user details page}}
-<h2>Edit the User details</h2>
+<div class="jumbotron">
+    <h2>Edit {{model.fname}}'s details</h2><br />
 
-{{! inputs with the current values}}
-{{input type="text" value=model.fname placeholder="First name" autofocus="autofocus"}}<br/>
-{{input type="text" value=model.lname placeholder="Last name"}}<br/>
-{{input type="text" value=model.email placeholder="Email"}}<br/>
-{{input type="text" value=model.phone placeholder="Phone number"}}<br/>
-{{input type="text" value=model.address placeholder="Address"}}<br/>
+    {{! inputs with the current values}}
+    <div class="form-group row">
+      <div class="col-md-2"><b>First Name:</b></div>
+      <div class="col-md-3 ">
+        {{input type="text" value=model.fname placeholder="First name" class="form-control"}}
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-2"><b>Last Name:</b></div>
+      <div class="col-md-3 ">
+        {{input type="text" value=model.lname placeholder="Last name" class="form-control"}}
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-2"><b>Email:</b></div>
+      <div class="col-md-3 ">
+        {{input type="text" value=model.email placeholder="Email" class="form-control"}}
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-2"><b>Phone Number:</b></div>
+      <div class="col-md-3 ">
+        {{input type="text" value=model.phone placeholder="Phone number" class="form-control"}}
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-2"><b>Address:</b></div>
+      <div class="col-md-3 ">
+        {{input type="text" value=model.address placeholder="Address" class="form-control"}}
+      </div>
+    </div>
 
-{{! button that call function and pass the whole model to it}}
-<button type="submit" {{action 'updateDetails' model}}>Save changes</button>
+    <div class="form-group row">
+      <div class="col-md-1 ">
+        <button {{action 'goBack'}} class="btn btn-warning form-control" >Back</button>
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2 ">
+        <button type="submit" {{action 'updateDetails' model}} class="btn btn-primary form-control" >Save changes <span class="glyphicon glyphicon-ok"></span></button>
+      </div>
+    </div>
+
+
+
+
+    {{! button that call function and pass the whole model to it}}
+
+</div>
